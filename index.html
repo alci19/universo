@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>NUESTRO UNIVERSO</title>
+    <title>FERNANDA, MI UNIVERSO ERES TU</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&family=Cormorant+Garamond:ital,wght@1,300&display=swap" rel="stylesheet">
     
     <style>
@@ -28,12 +28,47 @@
 
         /* Pantalla de Inicio Elegante */
         #intro-screen {
-            position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: radial-gradient(circle at center, rgba(30,10,20,0.8) 0%, rgba(0,0,0,1) 100%);
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            z-index: 100; transition: opacity 2.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+
+            background-image:
+                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+                
+                url("fer.png");
+
+            background-size: 50%;
+            background-position: center; 
+            background-repeat: no-repeat;
+
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 100;
+            transition: opacity 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+            overflow: hidden;
+}
+
+        #intro-screen::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background: rgba(255, 182, 300, 0.08);
+
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+
+            z-index: -1;
+}
         
         #intro-screen h1 {
             font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 3.5rem; letter-spacing: 6px; 
@@ -111,7 +146,7 @@
 <body>
 
     <div id="intro-screen">
-        <h1>NUESTRO UNIVERSO</h1>
+        <h1>FERNANDA, MI UNIVERSO ERES TU</h1>
         <p id="error-msg">⚠️ Si ves esto negro y no avanza al darle Explorar, es porque abriste el archivo con doble clic. Debes usar "Live Server" o un servidor local.</p>
         <button id="btn-enter">EXPLORAR</button>
     </div>
